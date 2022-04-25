@@ -1,6 +1,5 @@
 # Progressive Tetonic
 
-github page for Pietra's plug in
 
 This is Pietra's final thesis project instructed by Mark Ericson. It starts by looking at our current paradigm in designing social housing that is derived from the modernist idea of a well planned city and buildings. This authoritarian design creates one solution fits all which ignores the human qualities of the urban fabric and the specific local conditions.
 
