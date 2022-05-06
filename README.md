@@ -9,7 +9,25 @@ I’m creating a  plugin that shifts the role of architects as designers into sy
 
 VR Room : 
 
-Github Download Link : 
+Video :
+
+
+# System Requirement
+
+Rhino 6 / Rhino 7
+
+# Installation
+
+RHI: 
+- Download and install ProgressiveTectonic.rhi
+- Close and open Rhino
+- Type ProgressiveTectonic and hit enter
+
+PY:
+- Open Rhino
+- Open Python in Rhino
+- Drag and drop ProgressiveTectonic.py into the main window
+- Hit play
 
 # License
 
