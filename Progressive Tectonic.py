@@ -1,4 +1,4 @@
-#Arch 441//Medium//Fall 2021//Ericson
+#Arch 431//Medium//Spring 22//Ericson
 #
 #Pietra Prasetya
 #04.27.22
@@ -7,9 +7,6 @@
 #
 #This project creates Networked Housing Complex On Any Site
 #
-#Source:  
-#Source:
-#source:
 #
 #*****************************************************************************
 
@@ -21,6 +18,9 @@ from math import*
 from scriptcontext import escape_test
 import random
 from random import randrange
+import scriptcontext as sc
+import Rhino
+import System
 
 ###############################################
 
@@ -153,10 +153,10 @@ def branch( start_point, end_point , angle_add , max_length , min_length, Max_He
     #    rs.DeleteObject(point_c)
     
 
-    #mh = random.uniform(10,Max_Height)
-    #mw = random.uniform(6,Max_Width)
-    mh = 1
-    mw = 10
+    mh = random.uniform(10,Max_Height)
+    mw = random.uniform(6,Max_Width)
+    #mh = 1
+    #mw = 10
     
     make_building(start_point,point_b,point_c,mh,mw)
     
@@ -214,7 +214,6 @@ def hide_grid():
         rs.ShowGridAxes(view,show=False)
         rs.ShowWorldAxes(view,show=False)
 
-
 def RotateOblique(RotateX):
     Rx = float(RotateX)
     
@@ -256,9 +255,9 @@ def GetCaptureView(Scale,FileName,NewFolder):
             #save the file
             bitmap.Save(Dir, System.Drawing.Imaging.ImageFormat.Png);
 
-
-
 def play():
+    
+    rs.MessageBox("This Script Will Generate A Networked Housing Complex In Any Chosen Site")
     
     Site = rs.GetObject('Select Site')
     number = rs.GetInteger('How Many Starting Points?')
@@ -266,18 +265,23 @@ def play():
     box(Site,number)
 
     startpoints = rs.GetObjects('Select Starting Points')
+    
     startpoints = rs.coerce3dpointlist(startpoints)
+    
+    Max_Angle = rs.GetInteger('Enter Maximum Angle')
     
     Max_Height = rs.GetInteger('Enter Maximum Building Height')
     Max_Width = rs.GetInteger('Enter Maximum Building Width')
     
+    Max_Length = rs.GetInteger('Enter Maximum Building Length')
+    Min_Length = rs.GetInteger('Enter Minimum Building Length')
     
     for i in startpoints:
         P2 = explode_point(i, 100 , 5 , Site) 
         escape_test(True)
         for j in P2 :
             escape_test(True)
-            branch(i,j,45,500,100,Max_Height,Max_Width, Site)
+            branch(i,j,Max_Angle,Max_Length,Min_Length,Max_Height,Max_Width, Site)
 
     
     
@@ -290,15 +294,51 @@ def play():
     
     #rs.ZoomExtents()
     
-    
     #for i in range(360):
     #    escape_test(True)
     #    rs.Sleep(20)
     #    RotateOblique(1)
 
+
+
 ### MAIN ###
 
-play()
+
+
+
+
+
+#play()
+
+
+GetCaptureView(15,"pietradish2","pietradish")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #start_point = rs.GetPoint('start')
