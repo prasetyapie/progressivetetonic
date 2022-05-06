@@ -7,7 +7,7 @@ I’m creating a  plugin that shifts the role of architects as designers into sy
 
 # Links 
 
-VR Room : 
+VR Room : Https://progressive-tectonic.glitch.me
 
 Video :
 
